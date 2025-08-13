@@ -4,6 +4,9 @@ public class Meo {
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);
         String echo = "";
+        TextList textList = new TextList();
+        int index = 0;
+
         String cat = 
                 "      ⢀⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
                 "⠀⠀⠀⠀⠀⢀⣾⣿⡇⠀⠀⠀⠀⠀⢀⣼⡇\n" +
@@ -18,11 +21,19 @@ public class Meo {
         System.out.println("Hewwo from Meo\n" + cat);
         System.out.println("Meow, what would you like to do?");
         System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
-        while (!echo.equals("bye")) {
+
+        while (!echo.equals("bye")) { //check whether the last message was "bye"
             echo = myObj.nextLine();
             if (!echo.equals("bye")) {
-                System.out.println(echo);
-                System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
+                if (echo.equals("list")) {
+                    textList.printList();
+                    System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
+                }
+                else {
+                    textList.add(index, echo);
+                    index++;
+                    System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
+                }
             }
             else
                 System.out.println("Bye, it's my nap time. /ᐠ - ˕-マ｡˚ z Z ");
