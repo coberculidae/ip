@@ -6,7 +6,6 @@ public class Meo {
         String echo = "";
         TextList textList = new TextList();
         int index = 0;
-
         String cat = 
                 "      ⢀⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
                 "⠀⠀⠀⠀⠀⢀⣾⣿⡇⠀⠀⠀⠀⠀⢀⣼⡇\n" +
@@ -24,19 +23,37 @@ public class Meo {
 
         while (!echo.equals("bye")) { //check whether the last message was "bye"
             echo = myObj.nextLine();
-            if (!echo.equals("bye")) {
+            if (echo.equals("bye")) {
+                System.out.println("Bye, it's my nap time. /ᐠ - ˕-マ｡˚ z Z ");
+            } else {
                 if (echo.equals("list")) {
                     textList.printList();
                     System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
                 }
                 else {
-                    textList.add(index, echo);
-                    index++;
-                    System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
+                    if (echo.startsWith("mark")){
+                        int i = Integer.parseInt(echo.substring(4).trim());
+                        textList.markTask(i - 1);
+                        System.out.println("Good job~ Your task is done!");
+                        textList.printTask(i - 1);
+                        System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
+                    } else {
+                        if (echo.startsWith("unmark")) {
+                            int i = Integer.parseInt(echo.substring(6).trim());
+                            textList.unmarkTask(i - 1);
+                            System.out.println("This task is marked as not done yet...");
+                            textList.printTask(i - 1);
+                            System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
+                        } else {
+                            Task newTask = new Task(echo);
+                            textList.add(index, newTask);
+                            index++;
+                            System.out.println("added " + echo);
+                            System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
+                        }
+                    }
                 }
             }
-            else
-                System.out.println("Bye, it's my nap time. /ᐠ - ˕-マ｡˚ z Z ");
         }   
     }
 }
