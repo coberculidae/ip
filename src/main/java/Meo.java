@@ -45,11 +45,42 @@ public class Meo {
                             textList.printTask(i - 1);
                             System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
                         } else {
-                            Task newTask = new Task(echo);
-                            textList.add(index, newTask);
-                            index++;
-                            System.out.println("added " + echo);
-                            System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
+                            if (echo.startsWith("todo")) {
+                                Task newTask = new ToDo(echo.substring(4).trim());
+                                textList.add(index, newTask);
+                                index++;
+                                System.out.println(newTask.toString());
+                                System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
+                            } else {
+                                if (echo.startsWith("deadline")) {
+                                    int commandIndex = echo.indexOf("/by");
+                                    if (commandIndex >= 0) {
+                                        String taskDesc = echo.substring(8,commandIndex - 1).trim();
+                                        String taskDeadline = echo.substring(commandIndex + 3).trim();
+                                        Task newTask = new Deadline(taskDesc, taskDeadline);
+                                        textList.add(index, newTask);
+                                        index++;
+                                        System.out.println(newTask.toString());
+                                        System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
+                                    }
+                                } else {
+                                    if (echo.startsWith("event")) {
+                                        int fromIndex = echo.indexOf("/from");
+                                        int toIndex = echo.indexOf("/to");
+                                        if (fromIndex >= 0 && toIndex >= 0) {
+                                            String taskDesc = echo.substring(5,fromIndex - 1).trim();
+                                            String taskFrom = echo.substring(fromIndex + 5, toIndex - 1).trim();
+                                            String taskTo = echo.substring(toIndex + 3).trim();
+                                            Task newTask = new Event(taskDesc, taskFrom, taskTo);
+                                            textList.add(index, newTask);
+                                            index++;
+                                            System.out.println(newTask.toString());
+                                            System.out.println("ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ");
+                                        }
+                                    }
+                                }
+                            }
+
                         }
                     }
                 }

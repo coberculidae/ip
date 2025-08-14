@@ -2,7 +2,7 @@ public class Task {
     String description;
     boolean isDone;
 
-    Task(String text) {
+    public Task(String text) {
         description = text;
         isDone = false;
     }
