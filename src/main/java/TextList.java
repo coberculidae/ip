@@ -1,29 +1,39 @@
-
+import java.util.ArrayList;
 
 public class TextList {
-    Task[] list = new Task[100];
-    
+    ArrayList<Task> taskList = new ArrayList<Task>(); 
+
     public void add(int index, Task task) {
-        list[index] = task;
+        taskList.add(task);
     }
 
     public void printList() {
         int index = 0;
-        while (list[index] != null) {
-            System.out.println(index + 1 + ". " + list[index].toString());
+        while (taskList.get(index) != null) {
+            System.out.println(index + 1 + ". " + taskList.get(index).toString());
             index++;
         }
     }
 
-    public void markTask(int index) {
-        list[index].isMarked();
+    public void markTask(int index) throws MeoException{
+        Task task = taskList.size() == 0 ? null : taskList.get(index);
+        if (task != null) {
+            task.isMarked();
+        } else {
+            throw new MeoException(MeoException.taskNotExist);
+        }
     }
 
-    public void unmarkTask(int index) {
-        list[index].isUnmarked();
+    public void unmarkTask(int index) throws MeoException {
+        Task task = taskList.size() == 0 ? null : taskList.get(index);
+        if (task != null) {
+            task.isUnmarked();
+        } else {
+            throw new MeoException(MeoException.taskNotExist);
+        }
     }
 
     public void printTask(int index) {
-        System.out.println(list[index]);
+        System.out.println(taskList.get(index));
     }
 }
