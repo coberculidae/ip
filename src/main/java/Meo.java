@@ -86,6 +86,8 @@ public class Meo {
                                                 System.out.println(divider);
                                             } else 
                                                 throw new MeoException(MeoException.eventTime);
+                                        } else {
+                                            throw new MeoException(MeoException.commandUnknown);
                                         }
                                     }
                                 }
