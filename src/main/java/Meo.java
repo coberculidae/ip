@@ -87,7 +87,12 @@ public class Meo {
                                             } else 
                                                 throw new MeoException(MeoException.eventTime);
                                         } else {
-                                            throw new MeoException(MeoException.commandUnknown);
+                                            if (echo.startsWith("delete")) {
+                                                int i = Integer.parseInt(echo.substring(6).trim());
+                                                textList.deleteTask(i - 1);
+                                                System.out.println("I have eaten your task.\n" + divider);
+                                            } else 
+                                                throw new MeoException(MeoException.commandUnknown);
                                         }
                                     }
                                 }
