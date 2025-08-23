@@ -6,7 +6,9 @@ public class Meo {
         Scanner myObj = new Scanner(System.in);
         String echo = "";
         TextList textList = new TextList();
-        int index = 0;
+        if (FileHandler.getList() != null) {
+            textList = FileHandler.getList();
+        };
         String cat = "      ⢀⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
                 "⠀⠀⠀⠀⠀⢀⣾⣿⡇⠀⠀⠀⠀⠀⢀⣼⡇\n" +
                 "⠀⠀⠀⠀⠀⣸⣿⣿⡇⠀⠀⠀⠀⣴⣿⣿⠃\n" +
@@ -50,8 +52,7 @@ public class Meo {
                                     if (taskDesc.isEmpty())
                                         throw new MeoException(MeoException.taskMissing);
                                     Task newTask = new ToDo(taskDesc);
-                                    textList.add(index, newTask);
-                                    index++;
+                                    textList.add(newTask);
                                     System.out.println(newTask.toString());
                                     System.out.println(divider);
                                 } else {
@@ -63,8 +64,7 @@ public class Meo {
                                             if (taskDesc.isEmpty())
                                                 throw new MeoException(MeoException.taskMissing);
                                             Task newTask = new Deadline(taskDesc, taskDeadline);
-                                            textList.add(index, newTask);
-                                            index++;
+                                            textList.add(newTask);
                                             System.out.println(newTask.toString());
                                             System.out.println(divider);
                                         } else 
@@ -80,8 +80,7 @@ public class Meo {
                                                 String taskFrom = echo.substring(fromIndex + 5, toIndex - 1).trim();
                                                 String taskTo = echo.substring(toIndex + 3).trim();
                                                 Task newTask = new Event(taskDesc, taskFrom, taskTo);
-                                                textList.add(index, newTask);
-                                                index++;
+                                                textList.add(newTask);
                                                 System.out.println(newTask.toString());
                                                 System.out.println(divider);
                                             } else 
@@ -101,6 +100,7 @@ public class Meo {
                         }
                     }
                 }
+                textList.saveList();
             } catch (MeoException e) {
                 System.out.println(e.getMessage());
                 System.out.println(divider);

@@ -1,6 +1,6 @@
 public class Task {
-    String description;
-    boolean isDone;
+    protected String description;
+    protected boolean isDone;
 
     public Task(String text) {
         description = text;
@@ -17,6 +17,10 @@ public class Task {
 
     public boolean isTaskDone() {
         return isDone;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     @Override

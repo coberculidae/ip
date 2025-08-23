@@ -1,9 +1,19 @@
+import java.io.File;
 import java.util.ArrayList;
+import javafx.scene.text.Text;
 
 public class TextList {
     ArrayList<Task> taskList = new ArrayList<Task>(); 
 
-    public void add(int index, Task task) {
+    public TextList(){
+
+    };
+
+    public TextList(ArrayList<Task> list) {
+        taskList = list;
+    }
+
+    public void add(Task task) {
         taskList.add(task);
     }
 
@@ -13,6 +23,10 @@ public class TextList {
             System.out.println(index + 1 + ". " + taskList.get(index).toString());
             index++;
         }
+    }
+
+    public void saveList() {
+        FileHandler.writeFile(taskList);
     }
 
     public void markTask(int index) throws MeoException{
