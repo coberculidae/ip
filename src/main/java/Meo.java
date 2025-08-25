@@ -20,8 +20,7 @@ public class Meo {
                 "⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠛⠛⠛⠁⠀⠒⠤\n" +
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠀⠀";
         System.out.println("Hewwo from Meo\n" + cat);
-        System.out.println("Meow, what would you like to do?");
-        System.out.println(divider);
+        System.out.println("Meow, what would you like to do? \n" + divider);
 
         while (!echo.equals("bye")) { // check whether the last message was "bye"
             try {
@@ -53,8 +52,7 @@ public class Meo {
                                         throw new MeoException(MeoException.taskMissing);
                                     Task newTask = new ToDo(taskDesc);
                                     textList.add(newTask);
-                                    System.out.println(newTask.toString());
-                                    System.out.println(divider);
+                                    System.out.println(newTask.toString() + "\n" + divider);
                                 } else {
                                     if (echo.startsWith("deadline")) {
                                         int commandIndex = echo.indexOf("/by");
@@ -65,8 +63,7 @@ public class Meo {
                                                 throw new MeoException(MeoException.taskMissing);
                                             Task newTask = new Deadline(taskDesc, taskDeadline);
                                             textList.add(newTask);
-                                            System.out.println(newTask.toString());
-                                            System.out.println(divider);
+                                            System.out.println(newTask.toString() + "\n" + divider);
                                         } else 
                                             throw new MeoException(MeoException.deadlineTime);
                                     } else {
@@ -81,8 +78,7 @@ public class Meo {
                                                 String taskTo = echo.substring(toIndex + 3).trim();
                                                 Task newTask = new Event(taskDesc, taskFrom, taskTo);
                                                 textList.add(newTask);
-                                                System.out.println(newTask.toString());
-                                                System.out.println(divider);
+                                                System.out.println(newTask.toString() + "\n" + divider);
                                             } else 
                                                 throw new MeoException(MeoException.eventTime);
                                         } else {
@@ -102,8 +98,7 @@ public class Meo {
                 }
                 textList.saveList();
             } catch (MeoException e) {
-                System.out.println(e.getMessage());
-                System.out.println(divider);
+                System.out.println(e.getMessage() + "\n" + divider);
             }
         }
     }
