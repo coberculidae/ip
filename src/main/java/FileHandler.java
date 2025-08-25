@@ -10,9 +10,8 @@ public class FileHandler {
         try {
             File dataFile = new File("src/main/data/meo.txt");
             if (dataFile.createNewFile()) {
-                System.out.println("File created");
+                //System.out.println("File created");
             }
-            
             FileWriter writer = new FileWriter(dataFile);
             int index = 0;
             while (index < taskList.size()) {
@@ -37,21 +36,30 @@ public class FileHandler {
             }
             writer.close();
         } catch(IOException e) {
-
+            System.out.println("Uh oh... Something is wrong! Error: " + e);
         }
     }
 
-    protected static ArrayList<String> readFile() {
+    protected static ArrayList<String> readFile(){
         try {
             ArrayList<String> data = new ArrayList<String>();
             File dataFile = new File("src/main/data/meo.txt");
+            File fileDir = new File("src/main/data");
+            fileDir.mkdirs();
+            if (dataFile.createNewFile()) {
+                // System.out.println("File created.");
+                return new ArrayList<String>();
+            } else {
+                // System.out.println("File existed");
+            }
             Scanner reader = new Scanner(dataFile);
             while (reader.hasNextLine()) {
                 data.add(reader.nextLine());
             }
             reader.close();
             return data;
-        } catch(FileNotFoundException e) {
+        } catch(IOException e) {
+            System.out.println("Uh oh... Something is wrong when trying to read file! Error: " + e);
             return new ArrayList<String>();
         }
     }
@@ -89,12 +97,9 @@ public class FileHandler {
             if (newTask != null && taskStatus.equals("1")) {
                 newTask.isMarked();
             }
-            newTask.toString();
             list.add(newTask);    
             index++;
         }
-        
-        list.printList();
         return list;
     }
 
