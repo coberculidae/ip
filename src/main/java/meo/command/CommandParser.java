@@ -1,4 +1,4 @@
-package meo.commands;
+package meo.command;
 
 import meo.MeoException;
 

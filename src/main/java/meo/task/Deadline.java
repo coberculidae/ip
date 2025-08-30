@@ -1,4 +1,4 @@
-package meo.tasks;
+package meo.task;
 
 import meo.TimeParser;
 

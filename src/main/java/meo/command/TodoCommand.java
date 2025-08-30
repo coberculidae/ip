@@ -1,11 +1,11 @@
-package meo.commands;
+package meo.command;
 
 import meo.FileHandler;
 import meo.MeoException;
 import meo.TextList;
 import meo.Ui;
-import meo.tasks.Task;
-import meo.tasks.ToDo;
+import meo.task.Task;
+import meo.task.ToDo;
 
 public class TodoCommand extends Command {
 

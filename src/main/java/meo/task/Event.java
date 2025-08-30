@@ -1,4 +1,4 @@
-package meo.tasks;
+package meo.task;
 
 public class Event extends Task{
     protected String from;

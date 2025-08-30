@@ -1,6 +1,7 @@
 package meo;
 import java.util.ArrayList;
-import meo.tasks.Task;
+
+import meo.task.Task;
 
 public class TextList {
     ArrayList<Task> taskList = new ArrayList<Task>(); 

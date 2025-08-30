@@ -1,10 +1,10 @@
-package meo.commands;
+package meo.command;
 
 import meo.FileHandler;
 import meo.TextList;
 import meo.Ui;
-import meo.tasks.Event;
-import meo.tasks.Task;
+import meo.task.Event;
+import meo.task.Task;
 
 public class EventCommand extends Command {
 

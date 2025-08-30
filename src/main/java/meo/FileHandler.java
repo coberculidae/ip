@@ -1,14 +1,13 @@
 package meo;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-import meo.tasks.Deadline;
-import meo.tasks.Event;
-import meo.tasks.Task;
-import meo.tasks.ToDo;
+import meo.task.Deadline;
+import meo.task.Event;
+import meo.task.Task;
+import meo.task.ToDo;
 
 import java.util.ArrayList;
 
