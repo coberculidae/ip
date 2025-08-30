@@ -1,3 +1,4 @@
+package meo;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -6,6 +7,7 @@ import java.time.format.DateTimeParseException;
 
 public class TimeParser {
     protected static final DateTimeFormatter[] FORMATTERS = {
+        DateTimeFormatter.ofPattern("d/M/yyyy"),
         DateTimeFormatter.ofPattern("d/M/yyyy HHmm"),
         DateTimeFormatter.ofPattern("d/M/yyyy ha")
     };

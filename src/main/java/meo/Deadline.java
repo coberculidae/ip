@@ -1,9 +1,14 @@
+package meo;
 public class Deadline extends Task{
     protected String deadline;
 
     public Deadline(String text, String deadline) {
         super(text);
-        this.deadline = deadline;
+        if (TimeParser.parseTime(deadline).equals("NA")) {
+            this.deadline = deadline;
+        } else {
+            this.deadline = TimeParser.parseTime(deadline);
+        }
     }
 
     public String getDeadline() {
