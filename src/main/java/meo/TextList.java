@@ -1,7 +1,6 @@
 package meo;
-import java.io.File;
 import java.util.ArrayList;
-import javafx.scene.text.Text;
+import meo.tasks.Task;
 
 public class TextList {
     ArrayList<Task> taskList = new ArrayList<Task>(); 
@@ -57,7 +56,7 @@ public class TextList {
         }
     }
 
-    public void printTask(int index) {
-        System.out.println(taskList.get(index));
+    public String printTask(int index) {
+        return taskList.get(index).toString();
     }
 }

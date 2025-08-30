@@ -1,12 +1,11 @@
 package meo.commands;
 
-import meo.Deadline;
 import meo.FileHandler;
 import meo.MeoException;
 import meo.TextList;
-import meo.ToDo;
 import meo.Ui;
-import meo.Task;
+import meo.tasks.Deadline;
+import meo.tasks.Task;
 
 public class DeadlineCommand extends Command {
 

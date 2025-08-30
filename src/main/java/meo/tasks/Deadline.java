@@ -1,4 +1,7 @@
-package meo;
+package meo.tasks;
+
+import meo.TimeParser;
+
 public class Deadline extends Task{
     protected String deadline;
 

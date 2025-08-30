@@ -1,5 +1,4 @@
 package meo;
-import java.util.Scanner;
 
 import meo.commands.Command;
 import meo.commands.CommandParser;

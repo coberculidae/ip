@@ -1,7 +1,6 @@
 package meo.commands;
 
 import meo.MeoException;
-import meo.TextList;
 
 public class CommandParser {
     /**
@@ -12,7 +11,7 @@ public class CommandParser {
      * @throws MeoException
      */
     public Command parser(String command) throws MeoException {
-        switch (command.substring(0, command.indexOf(" "))) {
+        switch (command.split(" ")[0]) {
             case "todo":
                 return new TodoCommand(command.substring(4).trim());
             case "deadline":
@@ -41,19 +40,20 @@ public class CommandParser {
                 } else
                     throw new MeoException(MeoException.eventTime);
             case "mark":
-                return new Command();
+                String i = command.substring(4).trim();
+                return new MarkCommand(i);
             case "unmark":
-                return new Command();
+                String j = command.substring(6).trim();
+                return new UnmarkCommand(j);
             case "list":
-                return new Command();
+                return new ListCommand();
             case "delete":
-                return new Command();
+                String k = command.substring(6).trim();
+                return new DeleteCommand(k);
+            case "bye":
+                return new ExitCommand();
+            default:
+                throw new MeoException(MeoException.commandUnknown);
         }
-
-        return new Command();
-    }
-
-    public void execute(String command, String content, String[] tags) {
-
     }
 }

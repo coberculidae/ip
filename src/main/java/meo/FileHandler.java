@@ -4,6 +4,12 @@ import java.io.FileWriter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
+
+import meo.tasks.Deadline;
+import meo.tasks.Event;
+import meo.tasks.Task;
+import meo.tasks.ToDo;
+
 import java.util.ArrayList;
 
 public class FileHandler {

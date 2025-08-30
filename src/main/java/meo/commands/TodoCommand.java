@@ -3,9 +3,9 @@ package meo.commands;
 import meo.FileHandler;
 import meo.MeoException;
 import meo.TextList;
-import meo.ToDo;
 import meo.Ui;
-import meo.Task;
+import meo.tasks.Task;
+import meo.tasks.ToDo;
 
 public class TodoCommand extends Command {
 

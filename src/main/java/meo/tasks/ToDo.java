@@ -1,4 +1,5 @@
-package meo;
+package meo.tasks;
+
 public class ToDo extends Task {
     public ToDo(String text) {
         super(text);

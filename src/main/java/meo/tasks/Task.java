@@ -1,4 +1,4 @@
-package meo;
+package meo.tasks;
 public class Task {
     protected String description;
     protected boolean isDone;
