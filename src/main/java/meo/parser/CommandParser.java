@@ -1,6 +1,15 @@
-package meo.command;
+package meo.parser;
 
 import meo.MeoException;
+import meo.command.Command;
+import meo.command.DeadlineCommand;
+import meo.command.DeleteCommand;
+import meo.command.EventCommand;
+import meo.command.ExitCommand;
+import meo.command.ListCommand;
+import meo.command.MarkCommand;
+import meo.command.TodoCommand;
+import meo.command.UnmarkCommand;
 
 public class CommandParser {
     /**

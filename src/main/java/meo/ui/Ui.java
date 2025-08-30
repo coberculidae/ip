@@ -1,4 +1,4 @@
-package meo;
+package meo.ui;
 
 import java.util.Scanner;
 

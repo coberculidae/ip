@@ -2,8 +2,8 @@ package meo.command;
 
 import meo.FileHandler;
 import meo.MeoException;
-import meo.TextList;
-import meo.Ui;
+import meo.data.TextList;
+import meo.ui.Ui;
 
 public class MarkCommand extends Command {
 

@@ -1,6 +1,8 @@
-package meo;
+package meo.data;
 import java.util.ArrayList;
 
+import meo.FileHandler;
+import meo.MeoException;
 import meo.task.Task;
 
 public class TextList {

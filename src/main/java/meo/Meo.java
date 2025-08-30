@@ -1,7 +1,9 @@
 package meo;
 
 import meo.command.Command;
-import meo.command.CommandParser;
+import meo.data.TextList;
+import meo.parser.CommandParser;
+import meo.ui.Ui;
 
 public class Meo {
     private TextList textList = new TextList();

@@ -2,10 +2,10 @@ package meo.command;
 
 import meo.FileHandler;
 import meo.MeoException;
-import meo.TextList;
-import meo.Ui;
+import meo.data.TextList;
 import meo.task.Task;
 import meo.task.ToDo;
+import meo.ui.Ui;
 
 public class TodoCommand extends Command {
 
