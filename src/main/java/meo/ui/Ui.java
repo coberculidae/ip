@@ -29,11 +29,11 @@ public class Ui {
     }
 
     public void showCommandPrompt() {
-        printMessage(COMMAND_PROMPT, DIVIDER);
+        printMessage(System.lineSeparator(), COMMAND_PROMPT, DIVIDER);
     }
 
     public void showAddedTask(String taskAdded) {
-        printMessage("Added:", taskAdded, DIVIDER);
+        printMessage(System.lineSeparator(), "Added:", taskAdded);
     }
 
     public void showExitMessage() {
@@ -41,19 +41,19 @@ public class Ui {
     }
 
     public void showCompletedMessage(String taskDone) {
-        printMessage(COMPLETE_MESSAGE, taskDone, DIVIDER);
+        printMessage(System.lineSeparator(), COMPLETE_MESSAGE, taskDone);
     }
 
     public void showIncompletedMessage(String taskUndone) {
-        printMessage(INCOMPLETE_MESSAGE, taskUndone, DIVIDER);
+        printMessage(System.lineSeparator(), INCOMPLETE_MESSAGE, taskUndone);
     }
 
     public void showDeletedMessage() {
-        printMessage(DELETE_MESSAGE, DIVIDER);
+        printMessage(System.lineSeparator(), DELETE_MESSAGE);
     }
 
     public void showErrorMessage() {
-        printMessage(ERROR_MESSAGE);
+        printMessage(System.lineSeparator(), ERROR_MESSAGE);
     }
 
     public void printDivider() {
