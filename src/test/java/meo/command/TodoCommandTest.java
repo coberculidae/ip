@@ -7,6 +7,7 @@ import meo.parser.CommandParser;
 import meo.ui.Ui;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class TodoCommandTest {
     @Test
@@ -22,7 +23,7 @@ public class TodoCommandTest {
             assertEquals(1, textList.getSize());
             assertEquals("[T][ ] eat grass", textList.printTask(0));
         } catch (Exception e) {
-            // TODO: handle exception
+            fail();
         }
     }
 
