@@ -15,10 +15,7 @@ public class TodoCommand extends Command {
 
     @Override
     public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
-        String taskDesc = commandContent;
-        if (taskDesc.isEmpty())
-            throw new MeoException(MeoException.taskMissing);
-        Task newTask = new ToDo(taskDesc);
+        Task newTask = new ToDo(commandContent);
         textList.add(newTask);
         ui.showAddedTask(newTask.toString());
     }

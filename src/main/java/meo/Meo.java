@@ -28,6 +28,11 @@ public class Meo {
                 command = new CommandParser().parser(commandText);
                 command.execute(ui, textList, fileHandler);
             } catch (MeoException e) {
+                ui.showErrorMessage();
+                System.out.println(e);
+                e.printStackTrace();
+            } catch (Exception e) {
+                System.out.println(e);
                 e.printStackTrace();
             }
         } while (!command.isExit());

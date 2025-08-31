@@ -11,6 +11,7 @@ public class Ui {
     private static final String COMPLETE_MESSAGE = "Good job~ Your task is done!";
     private static final String INCOMPLETE_MESSAGE = "This task is marked as not done yet...";
     private static final String DELETE_MESSAGE = "I have eaten your task.";
+    private static final String ERROR_MESSAGE = "An error was caught.";
     private static final String COMMAND_PROMPT = "Meow, what would you like to do?";
     private static final String LOGO = "      ⢀⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
                 "⠀⠀⠀⠀⠀⢀⣾⣿⡇⠀⠀⠀⠀⠀⢀⣼⡇\n" +
@@ -49,6 +50,10 @@ public class Ui {
 
     public void showDeletedMessage() {
         printMessage(DELETE_MESSAGE, DIVIDER);
+    }
+
+    public void showErrorMessage() {
+        printMessage(ERROR_MESSAGE);
     }
 
     public void printDivider() {

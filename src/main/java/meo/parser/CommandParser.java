@@ -22,16 +22,17 @@ public class CommandParser {
     public Command parser(String command) throws MeoException {
         switch (command.split(" ")[0]) {
             case "todo":
+                if (isTaskContentMissing(command.substring(4).trim()))
+                    throw new MeoException(MeoException.taskMissing);
                 return new TodoCommand(command.substring(4).trim());
             case "deadline":
                 int commandIndex = command.indexOf("/by");
                 String[] deadlineTags = new String[1];
                 if (commandIndex >= 0) {
-                    String taskDesc = command.substring(8, commandIndex - 1).trim();
                     deadlineTags[0] = command.substring(commandIndex + 3).trim();
-                    if (taskDesc.isEmpty())
+                    if (isTaskContentMissing(command.substring(8, commandIndex - 1).trim()))
                         throw new MeoException(MeoException.taskMissing);
-                    return new DeadlineCommand(taskDesc, deadlineTags);
+                    return new DeadlineCommand(command.substring(8, commandIndex - 1).trim(), deadlineTags);
                 } else {
                     throw new MeoException(MeoException.deadlineTime);
                 }
@@ -64,5 +65,9 @@ public class CommandParser {
             default:
                 throw new MeoException(MeoException.commandUnknown);
         }
+    }
+
+    public boolean isTaskContentMissing(String content) {
+        return content.isEmpty();
     }
 }

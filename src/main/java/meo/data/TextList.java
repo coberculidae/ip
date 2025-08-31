@@ -32,6 +32,10 @@ public class TextList {
         FileHandler.writeFile(taskList);
     }
 
+    public int getSize() {
+        return taskList.size();
+    }
+
     public void markTask(int index) throws MeoException{
         Task task = taskList.size() == 0 ? null : taskList.get(index);
         if (task != null) {
