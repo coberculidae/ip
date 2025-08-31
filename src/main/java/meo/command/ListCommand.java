@@ -9,10 +9,10 @@ public class ListCommand extends Command{
 
     public ListCommand() {
     }
-
+    
+    @Override
     public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
         textList.printList();
-        ui.printDivider();
     }
 
 }
