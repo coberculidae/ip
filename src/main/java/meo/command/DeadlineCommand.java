@@ -7,6 +7,9 @@ import meo.task.Deadline;
 import meo.task.Task;
 import meo.ui.Ui;
 
+/** 
+ * Command that add a new Deadline task.
+ */
 public class DeadlineCommand extends Command {
 
     public DeadlineCommand(String commandContent, String[] tags) {

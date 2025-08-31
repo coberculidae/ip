@@ -3,8 +3,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-
-
+/**
+ * Parses time text input by user.
+ */
 public class TimeParser {
     protected static final DateTimeFormatter[] FORMATTERS = {
         DateTimeFormatter.ofPattern("d/M/yyyy"),
@@ -12,6 +13,12 @@ public class TimeParser {
         DateTimeFormatter.ofPattern("d/M/yyyy ha")
     };
 
+    /**
+     * Parses the time input by user and return a formatted string.
+     * 
+     * @param text Time input by user.
+     * @return Formatted string of the time.
+     */
     public static String parseTime(String text) {
         LocalDateTime time = null;
         text = text.toLowerCase();
@@ -31,10 +38,5 @@ public class TimeParser {
 
         String timeFormatted = time.format(DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm"));
         return timeFormatted;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(parseTime("2/12/2004 1400"));
-        System.out.println(parseTime("2/12/2004 2AM"));
     }
 }

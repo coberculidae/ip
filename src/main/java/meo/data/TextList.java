@@ -5,6 +5,10 @@ import meo.FileHandler;
 import meo.MeoException;
 import meo.task.Task;
 
+/** 
+ * Contains the currents task list.
+ * Processes any actions regarding the task list.
+ */
 public class TextList {
     ArrayList<Task> taskList = new ArrayList<Task>(); 
 
@@ -20,6 +24,9 @@ public class TextList {
         taskList.add(task);
     }
 
+    /**
+     * Prints every task in the current task list with their indices
+     */
     public void printList() {
         int index = 0;
         while (index < taskList.size()) {
@@ -28,6 +35,9 @@ public class TextList {
         }
     }
 
+    /**
+     * Saves the current task list to data file
+     */
     public void saveList() {
         FileHandler.writeFile(taskList);
     }
@@ -36,6 +46,12 @@ public class TextList {
         return taskList.size();
     }
 
+    /**
+     * Marks a task as done
+     * 
+     * @param index Index of targeted task
+     * @throws MeoException If the targeted task is not found in the task list
+     */
     public void markTask(int index) throws MeoException{
         Task task = taskList.size() == 0 ? null : taskList.get(index);
         if (task != null) {
@@ -45,6 +61,12 @@ public class TextList {
         }
     }
 
+    /**
+     * Marks a task as not done
+     * 
+     * @param index Index of targeted task
+     * @throws MeoException If the targeted task is not found in the task list
+     */
     public void unmarkTask(int index) throws MeoException {
         Task task = taskList.size() == 0 ? null : taskList.get(index);
         if (task != null) {
@@ -54,6 +76,12 @@ public class TextList {
         }
     }
 
+    /**
+     * Delete a task
+     * 
+     * @param index Index of targeted task
+     * @throws MeoException If the targeted task is not found in the task list
+     */
     public void deleteTask(int index) throws MeoException{
         Task task = taskList.size() == 0 ? null : taskList.get(index);
         if (task != null) {
@@ -63,6 +91,12 @@ public class TextList {
         }
     }
 
+    /**
+     * Returns a targeted task as a formatted string
+     * 
+     * @param index Index of targeted task
+     * @return Formatted string of argeted task
+     */
     public String printTask(int index) {
         return taskList.get(index).toString();
     }

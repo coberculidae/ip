@@ -5,12 +5,16 @@ import meo.MeoException;
 import meo.data.TextList;
 import meo.ui.Ui;
 
+/** 
+ * Command that delete a task.
+ */
 public class DeleteCommand extends Command {
 
     public DeleteCommand(String commandContent) {
         super(commandContent, null);
     }
-
+    
+    @Override
     public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
         int index = Integer.parseInt(commandContent);
         textList.deleteTask(index - 1);

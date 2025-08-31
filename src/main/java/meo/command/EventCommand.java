@@ -6,6 +6,9 @@ import meo.task.Event;
 import meo.task.Task;
 import meo.ui.Ui;
 
+/** 
+ * Command that add a new Event task.
+ */
 public class EventCommand extends Command {
 
     public EventCommand(String commandContent, String[] tags) {

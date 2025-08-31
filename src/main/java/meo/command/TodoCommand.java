@@ -7,6 +7,9 @@ import meo.task.Task;
 import meo.task.ToDo;
 import meo.ui.Ui;
 
+/** 
+ * Command that add a new Todo task.
+ */
 public class TodoCommand extends Command {
 
     public TodoCommand(String commandContent) {

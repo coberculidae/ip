@@ -5,6 +5,9 @@ import meo.MeoException;
 import meo.data.TextList;
 import meo.ui.Ui;
 
+/** 
+ * Command that mark a task as done.
+ */
 public class MarkCommand extends Command {
 
     public MarkCommand(String commandContent) {

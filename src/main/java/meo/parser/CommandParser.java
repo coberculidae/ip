@@ -11,13 +11,16 @@ import meo.command.MarkCommand;
 import meo.command.TodoCommand;
 import meo.command.UnmarkCommand;
 
+/**
+ * Parses commands from user's input.
+ */
 public class CommandParser {
     /**
-     * Parses user's input into command
+     * Parses user's input
      * 
-     * @param command user input string
-     * @return command to be executed
-     * @throws MeoException
+     * @param command User input string.
+     * @return Command to be executed.
+     * @throws MeoException If task content or required task tags is missing.
      */
     public Command parser(String command) throws MeoException {
         switch (command.split(" ")[0]) {

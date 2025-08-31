@@ -5,6 +5,9 @@ import meo.MeoException;
 import meo.data.TextList;
 import meo.ui.Ui;
 
+/** 
+ * Command that mark a task as not done.
+ */
 public class UnmarkCommand extends Command {
 
     public UnmarkCommand(String commandContent) {

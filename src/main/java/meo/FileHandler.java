@@ -13,6 +13,11 @@ import meo.task.ToDo;
 import java.util.ArrayList;
 
 public class FileHandler {
+    /**
+     * Writes the current task list into save file.
+     * 
+     * @param taskList Current task list.
+     */
     public static void writeFile(ArrayList<Task> taskList) {
         try {
             File dataFile = new File("src/main/data/meo.txt");
@@ -109,9 +114,4 @@ public class FileHandler {
         }
         return list;
     }
-
-    // public static void main (String[] args) {
-    //     System.out.println("One");
-    //     FileHandler.getList();
-    // }
 }

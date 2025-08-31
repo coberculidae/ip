@@ -10,7 +10,9 @@ public class Meo {
     private FileHandler fileHandler;
     private Ui ui = new Ui();
 
-
+    /**
+     * Starts the bot Meo.
+     */
     public void run() {
         ui.showWelcomeMessage();
         if (FileHandler.getList() != null) {
@@ -19,7 +21,9 @@ public class Meo {
         runCommandParseUntilExit();
     }
 
-    /** Runs the command parser on user's input until input is "exit" */
+    /** 
+     * Runs the command parser on user's input until input is "exit". 
+    */
     private void runCommandParseUntilExit() {
         Command command = new Command();
         do {
@@ -37,6 +41,7 @@ public class Meo {
             }
         } while (!command.isExit());
     }
+
     public static void main(String[] args) {
         new Meo().run();
     }

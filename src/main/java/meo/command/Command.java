@@ -5,6 +5,9 @@ import meo.MeoException;
 import meo.data.TextList;
 import meo.ui.Ui;
 
+/** 
+ * Command parent class for specific commands to inherit as child class 
+ */
 public class Command {
     protected String commandContent;
     protected String[] tags;
@@ -17,10 +20,22 @@ public class Command {
     public Command() {
     }
 
+    /**
+     * Checks if the command is the Exit command.
+     * @return False.
+     */
     public boolean isExit() {
         return false;
     }
 
+    /**
+     * Executes the command.
+     * 
+     * @param ui UI of the bot.
+     * @param textList Current list of tasks.
+     * @param fileHandler To save and load task list into file.
+     * @throws MeoException If encounter error while executing command.
+     */
     public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
 
     }

@@ -5,6 +5,9 @@ import meo.MeoException;
 import meo.data.TextList;
 import meo.ui.Ui;
 
+/** 
+ * Command that print the task list.
+ */
 public class ListCommand extends Command{
 
     public ListCommand() {

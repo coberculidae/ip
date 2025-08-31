@@ -66,8 +66,8 @@ public class Ui {
         }
     }
     /** 
-     * Prompts for the command, reads the command entered by user
-     * @return command entered by user
+     * Prompts for the command, reads the command entered by user.
+     * @return Command entered by user.
      */
     public String getUserCommand() {
         showCommandPrompt();

@@ -5,11 +5,19 @@ import meo.MeoException;
 import meo.data.TextList;
 import meo.ui.Ui;
 
+/** 
+ * Command that exit the bot.
+ */
 public class ExitCommand extends Command {
 
     public ExitCommand() {
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @return true
+     */
     @Override
     public boolean isExit() {
         return true;
