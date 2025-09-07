@@ -14,8 +14,8 @@ public class ListCommand extends Command{
     }
     
     @Override
-    public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
-        textList.printList();
+    public String execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
+        return textList.getList();
     }
 
 }

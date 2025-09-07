@@ -15,9 +15,9 @@ public class UnmarkCommand extends Command {
     }
 
     @Override
-    public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
+    public String execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
         int index = Integer.parseInt(commandContent);
         textList.unmarkTask(index - 1);
-        ui.showIncompletedMessage(textList.printTask(index - 1));
+        return ui.showIncompletedMessage(textList.printTask(index - 1));
     }
 }

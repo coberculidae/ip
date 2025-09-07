@@ -10,8 +10,8 @@ import meo.ui.Ui;
  */
 
 public class Meo {
-    private TextList textList = new TextList();
     private FileHandler fileHandler;
+    private TextList textList = FileHandler.getList();
     private Ui ui = new Ui();
 
     /**
@@ -19,15 +19,15 @@ public class Meo {
      */
     public void run() {
         ui.showWelcomeMessage();
-        if (FileHandler.getList() != null) {
-            textList = FileHandler.getList();
-        }
+        // if (FileHandler.getList() != null) {
+        //     textList = FileHandler.getList();
+        // }
         runCommandParseUntilExit();
     }
 
     /**
      * Runs the command parser on user's input until input is "exit".
-    */
+     */
     private void runCommandParseUntilExit() {
         Command command = new Command();
         do {
@@ -48,5 +48,23 @@ public class Meo {
 
     public static void main(String[] args) {
         new Meo().run();
+    }
+
+    public String getResponse(String input) {
+        Command command = new Command();
+        try {
+            String commandText = input;
+            command = new CommandParser().parser(commandText);
+            return command.execute(ui, textList, fileHandler);
+        } catch (MeoException e) {
+            ui.showErrorMessage();
+            System.out.println(e);
+            e.printStackTrace();
+            return "Error occurred.";
+        } catch (Exception e) {
+            System.out.println(e);
+            e.printStackTrace();
+            return "Error occurred.";
+        }
     }
 }

@@ -35,6 +35,16 @@ public class TextList {
         }
     }
 
+    public String getList() {
+        String list = "";
+        int index = 0;
+        while (index < taskList.size()) {
+            list += index + 1 + ". " + taskList.get(index).toString() + System.lineSeparator();
+            index++;
+        }
+        return list;
+    }
+
     /**
      * Saves the current task list to data file
      */

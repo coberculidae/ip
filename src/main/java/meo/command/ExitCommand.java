@@ -24,8 +24,8 @@ public class ExitCommand extends Command {
     }
 
     @Override
-    public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
+    public String execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
         textList.saveList();
-        ui.showExitMessage();
+        return ui.showExitMessage();
     }
 }

@@ -1,10 +1,13 @@
 package meo.ui;
 
 import java.util.Scanner;
+
+import meo.data.TextList;
 /**
  * Handle UI input and output.
  */
 public class Ui {
+    private static final String SEPARATOR = System.lineSeparator();
     private static final String DIVIDER = "ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ";
     private static final String HELLO_MESSAGE = "Hewwo from Meo";
     private static final String EXIT_MESSAGE = "Bye, it's my nap time. /ᐠ - ˕-マ｡˚ z Z ";
@@ -28,43 +31,52 @@ public class Ui {
     private final Scanner in = new Scanner(System.in);
 
     public void showWelcomeMessage() {
-        printMessage(HELLO_MESSAGE, LOGO);
+        printMessage(LOGO);
     }
 
-    public void showCommandPrompt() {
-        printMessage(System.lineSeparator(), COMMAND_PROMPT, DIVIDER);
+    public String showCommandPrompt() {
+        return returnMessage(COMMAND_PROMPT, DIVIDER);
     }
 
-    public void showAddedTask(String taskAdded) {
-        printMessage(System.lineSeparator(), "Added:", taskAdded);
+    public String showAddedTask(String taskAdded) {
+        return returnMessage("Added:", taskAdded);
     }
 
-    public void showExitMessage() {
-        printMessage(System.lineSeparator(), EXIT_MESSAGE);
+    public String showExitMessage() {
+        return returnMessage(EXIT_MESSAGE);
     }
 
-    public void showCompletedMessage(String taskDone) {
-        printMessage(System.lineSeparator(), COMPLETE_MESSAGE, taskDone);
+    public String showCompletedMessage(String taskDone) {
+        return returnMessage(COMPLETE_MESSAGE, taskDone);
     }
 
-    public void showIncompletedMessage(String taskUndone) {
-        printMessage(System.lineSeparator(), INCOMPLETE_MESSAGE, taskUndone);
+    public String showIncompletedMessage(String taskUndone) {
+        return returnMessage(INCOMPLETE_MESSAGE, taskUndone);
     }
 
-    public void showDeletedMessage() {
-        printMessage(System.lineSeparator(), DELETE_MESSAGE);
+    public String showDeletedMessage() {
+        return returnMessage(DELETE_MESSAGE);
     }
 
-    public void showErrorMessage() {
-        printMessage(System.lineSeparator(), ERROR_MESSAGE);
+    public String showErrorMessage() {
+        return returnMessage(ERROR_MESSAGE);
     }
 
-    public void showFindResultMessage() {
-        printMessage(System.lineSeparator(), FIND_RESULT_MESSAGE);
+    public String showFindResultMessage(TextList taskList) {
+        return returnMessage(FIND_RESULT_MESSAGE, taskList.getList());
     }
 
     public void printDivider() {
         System.out.println(DIVIDER);
+    }
+
+    public String returnMessage(String... messages) {
+        String result = "";
+        for (String m : messages) {
+            result += SEPARATOR;
+            result += m;
+        }
+        return result;
     }
 
     /**

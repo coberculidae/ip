@@ -17,9 +17,9 @@ public class DeadlineCommand extends Command {
     }
 
     @Override
-    public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
+    public String execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
         Task newTask = new Deadline(commandContent, tags[0]);
         textList.add(newTask);
-        ui.showAddedTask(newTask.toString());
+        return ui.showAddedTask(newTask.toString());
     }
 }

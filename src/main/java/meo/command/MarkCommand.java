@@ -15,9 +15,9 @@ public class MarkCommand extends Command {
     }
 
     @Override
-    public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
+    public String execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
         int index = Integer.parseInt(commandContent);
         textList.markTask(index - 1);
-        ui.showCompletedMessage(textList.printTask(index - 1));
+        return ui.showCompletedMessage(textList.printTask(index - 1));
     }
 }

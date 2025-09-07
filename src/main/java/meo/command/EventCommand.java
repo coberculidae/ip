@@ -16,9 +16,9 @@ public class EventCommand extends Command {
     }
 
     @Override
-    public void execute(Ui ui, TextList textList, FileHandler fileHandler) {
+    public String execute(Ui ui, TextList textList, FileHandler fileHandler) {
         Task newTask = new Event(commandContent, tags[0], tags[1]);
         textList.add(newTask);
-        ui.showAddedTask(newTask.toString());
+        return ui.showAddedTask(newTask.toString());
     }
 }

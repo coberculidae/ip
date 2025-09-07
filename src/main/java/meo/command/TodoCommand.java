@@ -17,9 +17,9 @@ public class TodoCommand extends Command {
     }
 
     @Override
-    public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
+    public String execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
         Task newTask = new ToDo(commandContent);
         textList.add(newTask);
-        ui.showAddedTask(newTask.toString());
+        return ui.showAddedTask(newTask.toString());
     }
 }

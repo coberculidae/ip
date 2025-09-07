@@ -13,11 +13,10 @@ public class FindCommand extends Command {
     }
 
     @Override
-    public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
+    public String execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
         TaskFinder taskFinder = new TaskFinder(textList);
         String[] keywords = {commandContent};
         TextList newTaskList = taskFinder.find(keywords);
-        ui.showFindResultMessage();
-        newTaskList.printList();
+        return ui.showFindResultMessage(newTaskList);
     }
 }

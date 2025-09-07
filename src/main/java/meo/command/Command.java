@@ -35,8 +35,9 @@ public class Command {
      * @param textList Current list of tasks.
      * @param fileHandler To save and load task list into file.
      * @throws MeoException If encounter error while executing command.
+     * @return Return Meo's message.
      */
-    public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
-
+    public String execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
+        return "";
     }
 }

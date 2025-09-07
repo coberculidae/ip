@@ -15,8 +15,9 @@ public class DeleteCommand extends Command {
     }
     
     @Override
-    public void execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
+    public String execute(Ui ui, TextList textList, FileHandler fileHandler) throws MeoException {
         int index = Integer.parseInt(commandContent);
         textList.deleteTask(index - 1);
+        return ui.showDeletedMessage();
     }
 }
