@@ -12,6 +12,7 @@ public class Ui {
     private static final String INCOMPLETE_MESSAGE = "This task is marked as not done yet...";
     private static final String DELETE_MESSAGE = "I have eaten your task.";
     private static final String ERROR_MESSAGE = "An error was caught.";
+    private static final String FIND_RESULT_MESSAGE = "Here's what I found!";
     private static final String COMMAND_PROMPT = "Meow, what would you like to do?";
     private static final String LOGO = "      ⢀⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
                 "⠀⠀⠀⠀⠀⢀⣾⣿⡇⠀⠀⠀⠀⠀⢀⣼⡇\n" +
@@ -37,7 +38,7 @@ public class Ui {
     }
 
     public void showExitMessage() {
-        printMessage(EXIT_MESSAGE);
+        printMessage(System.lineSeparator(), EXIT_MESSAGE);
     }
 
     public void showCompletedMessage(String taskDone) {
@@ -54,6 +55,10 @@ public class Ui {
 
     public void showErrorMessage() {
         printMessage(System.lineSeparator(), ERROR_MESSAGE);
+    }
+
+    public void showFindResultMessage() {
+        printMessage(System.lineSeparator(), FIND_RESULT_MESSAGE);
     }
 
     public void printDivider() {

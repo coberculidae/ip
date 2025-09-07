@@ -100,4 +100,8 @@ public class TextList {
     public String printTask(int index) {
         return taskList.get(index).toString();
     }
+
+    public ArrayList<Task> getAllTask() {
+        return taskList;
+    }
 }

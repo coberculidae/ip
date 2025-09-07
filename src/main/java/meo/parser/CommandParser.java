@@ -6,6 +6,7 @@ import meo.command.DeadlineCommand;
 import meo.command.DeleteCommand;
 import meo.command.EventCommand;
 import meo.command.ExitCommand;
+import meo.command.FindCommand;
 import meo.command.ListCommand;
 import meo.command.MarkCommand;
 import meo.command.TodoCommand;
@@ -63,6 +64,9 @@ public class CommandParser {
             case "delete":
                 String k = command.substring(6).trim();
                 return new DeleteCommand(k);
+            case "find":
+                String keyword = command.substring(4).trim();
+                return new FindCommand(keyword);
             case "bye":
                 return new ExitCommand();
             default:
