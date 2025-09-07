@@ -1,10 +1,10 @@
 package meo.ui;
 
 import java.util.Scanner;
-
+/**
+ * Handle UI input and output.
+ */
 public class Ui {
-    private final Scanner in = new Scanner(System.in);
-
     private static final String DIVIDER = "ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ";
     private static final String HELLO_MESSAGE = "Hewwo from Meo";
     private static final String EXIT_MESSAGE = "Bye, it's my nap time. /ᐠ - ˕-マ｡˚ z Z ";
@@ -14,16 +14,18 @@ public class Ui {
     private static final String ERROR_MESSAGE = "An error was caught.";
     private static final String FIND_RESULT_MESSAGE = "Here's what I found!";
     private static final String COMMAND_PROMPT = "Meow, what would you like to do?";
-    private static final String LOGO = "      ⢀⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
-                "⠀⠀⠀⠀⠀⢀⣾⣿⡇⠀⠀⠀⠀⠀⢀⣼⡇\n" +
-                "⠀⠀⠀⠀⠀⣸⣿⣿⡇⠀⠀⠀⠀⣴⣿⣿⠃\n" +
-                "⠀⠀⠀⠀⢠⣿⣿⣿⣇⠀⠀⢀⣾⣿⣿⣿⠀\n" +
-                "⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⡟⠀\n" +
-                "⠀⠀⢰⡿⠉⠀⡜⣿⣿⣿⡿⠿⢿⣿⣿⠃⠀\n" +
-                "⠒⠒⠸⣿⣄⡘⣃⣿⣿⡟⢰⠃⠀⢹⣿⡇⠀\n" +
-                "⠚⠉⠀⠈⠻⣿⣿⣿⣿⣿⣮⣤⣤⣿⡟⠁⠀\n" +
-                "⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠛⠛⠛⠁⠀⠒⠤\n" +
-                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠀⠀";
+    private static final String LOGO = "      ⢀⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+                + "⠀⠀⠀⠀⠀⢀⣾⣿⡇⠀⠀⠀⠀⠀⢀⣼⡇\n"
+                + "⠀⠀⠀⠀⠀⣸⣿⣿⡇⠀⠀⠀⠀⣴⣿⣿⠃\n"
+                + "⠀⠀⠀⠀⢠⣿⣿⣿⣇⠀⠀⢀⣾⣿⣿⣿⠀\n"
+                + "⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⡟⠀\n"
+                + "⠀⠀⢰⡿⠉⠀⡜⣿⣿⣿⡿⠿⢿⣿⣿⠃⠀\n"
+                + "⠒⠒⠸⣿⣄⡘⣃⣿⣿⡟⢰⠃⠀⢹⣿⡇⠀\n"
+                + "⠚⠉⠀⠈⠻⣿⣿⣿⣿⣿⣮⣤⣤⣿⡟⠁⠀\n"
+                + "⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠛⠛⠛⠁⠀⠒⠤\n"
+                + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠀⠀";
+
+    private final Scanner in = new Scanner(System.in);
 
     public void showWelcomeMessage() {
         printMessage(HELLO_MESSAGE, LOGO);
@@ -65,12 +67,16 @@ public class Ui {
         System.out.println(DIVIDER);
     }
 
+    /**
+     * Print messages
+     * @param messages Messages to be printed
+     */
     public void printMessage(String... messages) {
         for (String m : messages) {
             System.out.println(m);
         }
     }
-    /** 
+    /**
      * Prompts for the command, reads the command entered by user.
      * @return Command entered by user.
      */

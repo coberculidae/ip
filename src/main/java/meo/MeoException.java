@@ -1,5 +1,5 @@
 package meo;
-public class MeoException extends Exception{
+public class MeoException extends Exception {
     public static String taskMissing = "Meow, please insert your task.";
     public static String deadlineTime = "Meow, please include your deadline with /by.";
     public static String eventTime = "Meow, please include your from and to timing with /from and /to.";

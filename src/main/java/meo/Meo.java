@@ -5,6 +5,10 @@ import meo.data.TextList;
 import meo.parser.CommandParser;
 import meo.ui.Ui;
 
+/**
+ * Run Meo
+ */
+
 public class Meo {
     private TextList textList = new TextList();
     private FileHandler fileHandler;
@@ -17,12 +21,12 @@ public class Meo {
         ui.showWelcomeMessage();
         if (FileHandler.getList() != null) {
             textList = FileHandler.getList();
-        };
+        }
         runCommandParseUntilExit();
     }
 
-    /** 
-     * Runs the command parser on user's input until input is "exit". 
+    /**
+     * Runs the command parser on user's input until input is "exit".
     */
     private void runCommandParseUntilExit() {
         Command command = new Command();

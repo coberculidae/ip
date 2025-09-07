@@ -11,19 +11,19 @@ import meo.ui.Ui;
 
 public class TaskFinderTest {
 
-    private final String[] COMMANDS = {"deadline eat floor /by 5pm", 
-            "event eat grass /from mond 10am /to 2pm",
-            "todo hangout"
-            };
-    private final String[] KEYWORDS = {"hangout"};
-    private final Ui UI = new Ui();
+    private static String[] commands = {"deadline eat floor /by 5pm",
+        "event eat grass /from mond 10am /to 2pm",
+        "todo hangout"
+        };
+    private static String[] keywords = {"hangout"};
+    private static Ui ui = new Ui();
 
     public TextList createTaskList() {
         TextList taskList = new TextList();
-        for (String c : COMMANDS) {
+        for (String c : commands) {
             try {
                 Command command = new CommandParser().parser(c);
-                command.execute(UI, taskList, null);
+                command.execute(ui, taskList, null);
             } catch (MeoException e) {
                 e.printStackTrace();
             }
@@ -35,6 +35,6 @@ public class TaskFinderTest {
     public void findTasks_byOneKeyword_success() {
         TextList taskList = createTaskList();
         TaskFinder taskFinder = new TaskFinder(taskList);
-        assertEquals(1, taskFinder.find(KEYWORDS).getSize());
+        assertEquals(1, taskFinder.find(keywords).getSize());
     }
 }

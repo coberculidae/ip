@@ -15,7 +15,7 @@ public class TimeParser {
 
     /**
      * Parses the time input by user and return a formatted string.
-     * 
+     *
      * @param text Time input by user.
      * @return Formatted string of the time.
      */
@@ -28,8 +28,9 @@ public class TimeParser {
                 time = LocalDateTime.parse(text, format);
                 break;
             } catch (DateTimeParseException e) {
+                System.out.println(e);
             }
-        }   
+        }
 
         // If no format matches
         if (time == null) {

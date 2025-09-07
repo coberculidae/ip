@@ -1,5 +1,9 @@
 package meo.parser;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+
 import org.junit.jupiter.api.Test;
 
 import meo.MeoException;
@@ -7,14 +11,6 @@ import meo.command.Command;
 import meo.command.DeadlineCommand;
 import meo.command.EventCommand;
 import meo.command.TodoCommand;
-import meo.data.TextList;
-import meo.task.ToDo;
-import meo.ui.Ui;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 public class CommandParserTest {
     private final CommandParser parser = new CommandParser();

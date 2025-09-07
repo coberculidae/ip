@@ -1,13 +1,13 @@
 package meo.command; //same package as the class being tested
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+
 import org.junit.jupiter.api.Test;
 
 import meo.data.TextList;
 import meo.parser.CommandParser;
 import meo.ui.Ui;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 
 public class TodoCommandTest {
     @Test
