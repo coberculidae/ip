@@ -12,10 +12,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    private VBox dialogContainer;
-    private TextField userInput;
-    private Image userImage = new Image(this.getClass().getResourceAsStream("/images/user.png"));
-    private Image meoImage = new Image(this.getClass().getResourceAsStream("/images/meo.png"));
     private Meo meo = new Meo();
 
     @Override

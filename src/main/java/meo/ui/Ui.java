@@ -9,7 +9,7 @@ import meo.data.TextList;
 public class Ui {
     private static final String SEPARATOR = System.lineSeparator();
     private static final String DIVIDER = "ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ ฅ^•ﻌ•^ฅ";
-    private static final String HELLO_MESSAGE = "Hewwo from Meo";
+    private static final String HELLO_MESSAGE = "Hewwo, it's Meo ฅ^•ﻌ•^ฅ";
     private static final String EXIT_MESSAGE = "Bye, it's my nap time. /ᐠ - ˕-マ｡˚ z Z ";
     private static final String COMPLETE_MESSAGE = "Good job~ Your task is done!";
     private static final String INCOMPLETE_MESSAGE = "This task is marked as not done yet...";
@@ -30,12 +30,12 @@ public class Ui {
 
     private final Scanner in = new Scanner(System.in);
 
-    public void showWelcomeMessage() {
-        printMessage(LOGO);
+    public String showWelcomeMessage() {
+        return returnMessage(HELLO_MESSAGE);
     }
 
     public String showCommandPrompt() {
-        return returnMessage(COMMAND_PROMPT, DIVIDER);
+        return returnMessage(COMMAND_PROMPT);
     }
 
     public String showAddedTask(String taskAdded) {
