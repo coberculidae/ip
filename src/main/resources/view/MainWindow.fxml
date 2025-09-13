@@ -11,7 +11,8 @@
             prefHeight="600.0" prefWidth="400.0"
             xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="meo.MainWindow">
+            fx:controller="meo.MainWindow"
+            style="-fx-background-color: #99d4f4ff;">
     <children>
         <TextField fx:id="userInput"
                    layoutY="558.0"
@@ -26,7 +27,8 @@
                 onAction="#handleUserInput"
                 prefHeight="41.0"
                 prefWidth="76.0"
-                text="Send" />
+                text="Send" 
+                style="-fx-border-radius: 10px; -fx-font-family: 'Courier New', monospace; -fx-font-weight: bold;"/>
         <ScrollPane fx:id="scrollPane"
                     hbarPolicy="NEVER"
                     hvalue="1.0"
@@ -36,7 +38,8 @@
             <content>
                 <VBox fx:id="dialogContainer"
                       prefHeight="552.0"
-                      prefWidth="388.0" />
+                      prefWidth="388.0" 
+                      style="-fx-background-color: #99d4f4ff;"/>
             </content>
         </ScrollPane>
     </children>

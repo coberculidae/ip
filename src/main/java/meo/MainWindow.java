@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import meo.ui.Ui;
 /**
  * Controller for the main GUI.
  */
@@ -29,7 +30,14 @@ public class MainWindow extends AnchorPane {
 
     @FXML
     public void initialize() {
+        Ui ui = new Ui();
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
+        String welcomeMessage = ui.showWelcomeMessage();
+        String prompt = ui.showCommandPrompt();
+        dialogContainer.getChildren().addAll(
+                DialogBox.getMeoDialog(welcomeMessage, meoImage),
+                DialogBox.getMeoDialog(prompt, meoImage)
+        );
     }
 
     /** Injects the Meo instance */

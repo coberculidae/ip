@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 
 <fx:root alignment="TOP_RIGHT"
          maxHeight="1.7976931348623157E308"
@@ -13,8 +14,19 @@
          xmlns="http://javafx.com/javafx/17"
          xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <Label fx:id="dialog" text="Label" wrapText="true" minHeight="-Infinity"/>
-    <ImageView fx:id="displayPicture" fitHeight="99.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" />
+    <StackPane style="-fx-padding: 4px;">
+      <Label fx:id="dialog" text="Label" wrapText="true" minHeight="-Infinity" 
+              style="-fx-font-family: 'Courier New', monospace; -fx-font-weight: bold;"/>
+    </StackPane>
+    <StackPane 
+      style="-fx-border-color: white; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-background-radius: 10px;
+            -fx-padding: 2px;-fx-background-color: white">
+      <ImageView fx:id="displayPicture"
+               fitHeight="99.0"
+               fitWidth="99.0"
+               pickOnBounds="true"
+               preserveRatio="true" />
+    </StackPane>
   </children>
   <padding>
     <Insets bottom="15.0" left="5.0" right="5.0" top="15.0" />
