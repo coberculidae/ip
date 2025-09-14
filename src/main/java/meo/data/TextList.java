@@ -63,6 +63,7 @@ public class TextList {
      * @throws MeoException If the targeted task is not found in the task list
      */
     public void markTask(int index) throws MeoException{
+        assert index >= 0 : "Index must be positive";
         Task task = taskList.size() == 0 ? null : taskList.get(index);
         if (task != null) {
             task.isMarked();
@@ -78,6 +79,7 @@ public class TextList {
      * @throws MeoException If the targeted task is not found in the task list
      */
     public void unmarkTask(int index) throws MeoException {
+        assert index >= 0 : "Index must be positive";
         Task task = taskList.size() == 0 ? null : taskList.get(index);
         if (task != null) {
             task.isUnmarked();
