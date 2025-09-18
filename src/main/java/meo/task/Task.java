@@ -2,9 +2,11 @@ package meo.task;
 public class Task {
     protected String description;
     protected boolean isDone;
+    protected String[] tags;
 
-    public Task(String text) {
+    public Task(String text, String[] tags) {
         description = text;
+        this.tags = tags;
         isDone = false;
     }
 

@@ -6,7 +6,7 @@ public class Deadline extends Task {
     protected String deadline;
 
     public Deadline(String text, String deadline) {
-        super(text);
+        super(text, null);
         if (TimeParser.parseTime(deadline).equals("NA")) {
             this.deadline = deadline;
         } else {

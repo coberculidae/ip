@@ -5,7 +5,7 @@ public class Event extends Task {
     protected String to;
 
     public Event(String text, String from, String to) {
-        super(text);
+        super(text, null);
         this.from = from;
         this.to = to;
     }

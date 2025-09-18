@@ -9,6 +9,7 @@ import meo.command.ExitCommand;
 import meo.command.FindCommand;
 import meo.command.ListCommand;
 import meo.command.MarkCommand;
+import meo.command.SortCommand;
 import meo.command.TodoCommand;
 import meo.command.UnmarkCommand;
 
@@ -48,6 +49,12 @@ public class CommandParser {
             case "find":
                 String keyword = command.substring(4).trim();
                 return new FindCommand(keyword);
+            case "sort":
+                if (command.split(" ")[1].equals("asc")) {
+                    return new SortCommand(0);
+                } else if ((command.split(" ")[1].equals("desc"))) {
+                    return new SortCommand(1);
+                }
             case "bye":
                 return new ExitCommand();
             default:

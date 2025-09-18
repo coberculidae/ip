@@ -45,6 +45,10 @@ public class TextList {
         return list;
     }
 
+    public void sortList(int compareIndex) {
+        taskList.sort((task1, task2) -> { return compareIndex * task1.getDescription().compareTo(task2.getDescription());});
+    }
+
     /**
      * Saves the current task list to data file
      */

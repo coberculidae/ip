@@ -60,11 +60,11 @@ public class Meo {
             ui.showErrorMessage();
             System.out.println(e);
             e.printStackTrace();
-            return "Error occurred.";
+            return e.getMessage();
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
-            return "Error occurred.";
+            return "Meo, something went wrong.";
         }
     }
 }

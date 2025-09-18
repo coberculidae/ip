@@ -10,7 +10,7 @@ import meo.ui.Ui;
  */
 public class Command {
     protected String commandContent;
-    protected String[] tags;
+    String[] tags;
 
     public Command(String commandContent, String[] tags) {
         this.commandContent = commandContent;
