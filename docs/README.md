@@ -1,10 +1,8 @@
 # Meo User Guide
 
-// Update the title above to match the actual product name
-
 // Product screenshot goes here
 
-**Meo** is a chatbot (or a catbot!) that will help you keep track of your tasks 
+$${\color{pink}Meo}$$ is a chatbot (or a catbot!) that will help you keep track of your tasks 
 
 ## Adding deadlines
 
