@@ -13,7 +13,7 @@
 **Command:** `deadline [deadline description] /by [deadline time]`
 
 **Example:** 
-```
+```ruby
 deadline scratch sofa /by 5pm
 
 Output:
@@ -27,7 +27,7 @@ Added: [D][] scratch sofa | by: 5pm
 **Command:** `todo [to do task description]`
 
 **Example:** 
-```
+```ruby
 event eat grass
 
 Output:
@@ -41,7 +41,7 @@ Added: [T][] eat grass
 **Command:** `event [event description] /from [start time] /to [end time]`
 
 **Example:** 
-```
+```ruby
 event breakfast /from 11am /to 12pm
 
 Output:
@@ -55,7 +55,7 @@ Added: [E][] lunch | from: 11am to: 12pm
 **Command:** `list`
 
 **Example:** 
-```
+```ruby
 list
 
 Output:
@@ -71,7 +71,7 @@ Output:
 **Command:** `mark [index number of task]`
 
 **Example:** 
-```
+```ruby
 mark 1
 
 Output:
@@ -86,7 +86,7 @@ Good job~ Your task is done!
 **Command:** `unmark [index number of task]`
 
 **Example:** 
-```
+```ruby
 umark 1
 
 Output:
@@ -103,7 +103,7 @@ This task is marked as not done yet
 `sort desc`
 
 **Example:** 
-```
+```ruby
 sort asc
 
 Output:
@@ -112,7 +112,7 @@ Output:
 3. [D][] scratch sofa | by: 5pm 
 ```
 
-```
+```ruby
 sort desc
 
 Output:
@@ -128,7 +128,7 @@ Output:
 **Command:** `delete [index number of task]`
 
 **Example:** 
-```
+```ruby
 delete 1
 
 Output:
@@ -142,7 +142,7 @@ I have eaten your task.
 **Command:** `find [keyword]`
 
 **Example:** 
-```
+```ruby
 find eat
 
 Output:
