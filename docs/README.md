@@ -1,6 +1,3 @@
----
-layout: default
----
 
 # <span style="color:pink"> Meo User Guide </span>
 
