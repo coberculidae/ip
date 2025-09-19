@@ -1,8 +1,8 @@
-# $${\color{pink}Meo \color{pink}User \color{pink}Guide}$$
+# <span style="color:pink"> Meo User Guide </span>
 
 ![alt text](Ui.png)
 
-$${\color{pink}Meo}$$ is a chatbot (or a catbot!) that will help you keep track of your tasks. 
+<span style="color:pink"> Meo </span>is a chatbot (or a catbot!) that will help you keep track of your tasks. 
 
 
 ## Adding deadlines
