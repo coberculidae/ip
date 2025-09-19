@@ -1,8 +1,9 @@
-# Meo User Guide
+# $${\color{pink}Meo \color{pink}User \color{pink}Guide}$$
 
-// Product screenshot goes here
+![alt text](Ui.png)
 
-$${\color{pink}Meo}$$ is a chatbot (or a catbot!) that will help you keep track of your tasks 
+$${\color{pink}Meo}$$ is a chatbot (or a catbot!) that will help you keep track of your tasks. 
+
 
 ## Adding deadlines
 
@@ -18,6 +19,7 @@ Output:
 Added: [D][] scratch sofa | by: 5pm 
 ```
 
+
 ## Adding to do
 
 **Function:** Add a to do task to your task list. 
@@ -32,6 +34,7 @@ Output:
 Added: [T][] eat grass
 ```
 
+
 ## Adding events
 
 **Function:** Add an event to your task list, including the starting time and ending time. 
@@ -45,6 +48,7 @@ event breakfast /from 11am /to 12pm
 Output:
 Added: [E][] lunch | from: 11am to: 12pm 
 ```
+
 
 ## Show all tasks
 
@@ -62,6 +66,7 @@ Output:
 3. [E][] lunch | from: 11am to: 12pm 
 ```
 
+
 ## Mark task as done
 
 **Function:** Mark a task as done. 
@@ -77,6 +82,7 @@ Good job~ Your task is done!
 [D][X] scratch sofa | by: 5pm 
 ```
 
+
 ## Unmark task
 
 **Function:** Unmark a finished task.
@@ -91,6 +97,7 @@ Output:
 This task is marked as not done yet
 [D][] scratch sofa | by: 5pm 
 ```
+
 
 ## Sort tasks alphabetically by name 
 
@@ -119,6 +126,7 @@ Output:
 3. [T][] eat grass
 ```
 
+
 ## Delete task
 
 **Function:** Delete a task.
@@ -132,6 +140,7 @@ delete 1
 Output:
 I have eaten your task.
 ```
+
 
 ## Find tasks
 

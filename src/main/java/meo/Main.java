@@ -18,6 +18,7 @@ public class Main extends Application {
             AnchorPane ap = fxmlLoader.load();
             Scene scene = new Scene(ap);
             stage.setScene(scene);
+            stage.setTitle("MEO");
             fxmlLoader.<MainWindow>getController().setMeo(meo);
             stage.show();
         } catch (IOException e) {
