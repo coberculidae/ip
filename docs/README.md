@@ -1,4 +1,6 @@
-
+---
+layout: default
+---
 # <span style="color:pink"> Meo User Guide </span>
 
 ![alt text](Ui.png)
